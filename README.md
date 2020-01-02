@@ -1,2 +1,2 @@
 # tiagoflix
-Filmes online em Django 2 com react.js
+Filmes online em Django 3 com react.js
