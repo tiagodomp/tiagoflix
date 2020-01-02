@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from home.views import index
+from favoritos.views import favoritos
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('index/', index, name='index'),
+    path('favoritos/', index, name='favoritos'),
 ]

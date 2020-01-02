@@ -33,7 +33,7 @@ function handleSubmit(event) {
   const text = document.querySelector('#char-input').value
 
   axios
-    .get(`/index?text=${text}`).then(({data}) => {
+    .get(`/favoritos?text=${text}`).then(({data}) => {
       document.querySelector('#char-count').textContent = `${data.count} Caracteres!`
     })
     .catch(err => console.log(err))
@@ -45,7 +45,7 @@ function App() {
       <div>
         <label htmlFor='char-input'>Quantos Caracteres tem </label>
         <input id='char-input' type='text' />
-        <button onClick={handleSubmit}>have?</button>
+        <button onClick={handleSubmit}> contar? </button>
       </div>
 
       <div>
