@@ -21,5 +21,5 @@ from favoritos.views import favoritos
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('index/', index, name='index'),
-    path('favoritos/', index, name='favoritos'),
+    path('favoritos/', favoritos, name='favoritos'),
 ]
