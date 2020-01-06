@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class HomeConfig(AppConfig):
+class FavoritosConfig(AppConfig):
     name = 'favoritos'

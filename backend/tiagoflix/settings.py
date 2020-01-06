@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     'home.apps.HomeConfig',
-    'favoritos',
+    'favoritos.apps.FavoritosConfig',
 
     'rest_framework',
     'corsheaders',
@@ -51,7 +51,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'corsheaders.middleware.CorsMiddleaware', # é preciso estar acima do commonMiddleware
+    'corsheaders.middleware.CorsMiddleware', # é preciso estar acima do commonMiddleware
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -69,6 +69,10 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.BasicAuthentication',
     ),
+}
+
+JWT_AUTH = {
+    'JWT_RESPONSE_PAYLOAD_HANDLER': 'tiagoflix.utils.jwt_response_handler'
 }
 
 CORS_ORIGIN_WHITELIST = (
@@ -93,7 +97,7 @@ TEMPLATES = [
     },
 ]
 
-#WSGI_APPLICATION = 'tiagoflix.wsgi.application'
+WSGI_APPLICATION = 'tiagoflix.wsgi.application'
 
 
 # Database
@@ -144,3 +148,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+# acessar a api da OMDB através do e-mail
+# tiagodominguespereira@gmail.com
+OMDB_URL = 'http://www.omdbapi.com/'
+OMDB_KEY = 'dc00ff8f'
