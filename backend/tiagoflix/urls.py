@@ -18,7 +18,7 @@ from django.urls import path, include
 from home.views import index
 from favoritos.views import favoritos
 from rest_framework_jwt.views import obtain_jwt_token
-from omdb.views import Omdb
+from omdb.views import listar_filmes
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,4 +28,5 @@ urlpatterns = [
 
     path('index/', index, name='index'),
     path('favoritos/', favoritos, name='favoritos'),
+    path('', listar_filmes, name='filmes'),
 ]
