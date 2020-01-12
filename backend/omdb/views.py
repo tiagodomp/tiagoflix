@@ -2,15 +2,12 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 #from rest_framework import authentication, permissions
 from tiagoflix import settings
+from lista_filmes import busca
 import requests
-import os
 
 # Create your views here.
-@api_view()
-def listar_filmes():
-    data = {}
-    if not data:
-        data['i'] = 'tt3896198'
+
+def listar_filmes(request):
 
     url = url_omdb(request.data)
     r = requests.get(url.base, url.params)
